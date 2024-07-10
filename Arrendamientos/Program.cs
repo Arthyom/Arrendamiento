@@ -29,13 +29,13 @@ var cn = builder.Configuration.GetConnectionString("Arrendamiento");
 builder.Services.AddDbContext<ArrendamientoContext>(opt => opt.UseMySql(cn, ServerVersion.AutoDetect(cn)));
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
+// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+//}
 
 //app.UseHttpsRedirection();
 
