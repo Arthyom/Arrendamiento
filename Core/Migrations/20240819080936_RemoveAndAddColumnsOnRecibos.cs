@@ -28,7 +28,7 @@ namespace Core.Migrations
                 table: "recibo",
                 type: "longtext",
                 nullable: true,
-                collation: "utf8mb4_0900_ai_ci")
+                collation: "utf8mb4_unicode_ci")
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.AddColumn<DateTime>(

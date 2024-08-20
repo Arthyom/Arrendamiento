@@ -17,14 +17,14 @@ namespace Core.Migrations
                 maxLength: 100,
                 nullable: true,
                 defaultValueSql: "'Moroleon'",
-                collation: "utf8mb4_0900_ai_ci",
+                collation: "utf8mb4_unicode_ci",
                 oldClrType: typeof(string),
                 oldType: "varchar(100)",
                 oldMaxLength: 100,
                 oldDefaultValueSql: "'Moroleon'")
                 .Annotation("MySql:CharSet", "utf8mb4")
                 .OldAnnotation("MySql:CharSet", "utf8mb4")
-                .OldAnnotation("Relational:Collation", "utf8mb4_0900_ai_ci");
+                .OldAnnotation("Relational:Collation", "utf8mb4_unicode_ci");
 
             migrationBuilder.AddColumn<string>(
                 name: "Nombre",
@@ -33,7 +33,7 @@ namespace Core.Migrations
                 maxLength: 100,
                 nullable: false,
                 defaultValue: "",
-                collation: "utf8mb4_0900_ai_ci")
+                collation: "utf8mb4_unicode_ci")
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
 
@@ -58,7 +58,7 @@ namespace Core.Migrations
                 maxLength: 100,
                 nullable: false,
                 defaultValueSql: "'Moroleon'",
-                collation: "utf8mb4_0900_ai_ci",
+                collation: "utf8mb4_unicode_ci",
                 oldClrType: typeof(string),
                 oldType: "varchar(100)",
                 oldMaxLength: 100,
@@ -66,7 +66,7 @@ namespace Core.Migrations
                 oldDefaultValueSql: "'Moroleon'")
                 .Annotation("MySql:CharSet", "utf8mb4")
                 .OldAnnotation("MySql:CharSet", "utf8mb4")
-                .OldAnnotation("Relational:Collation", "utf8mb4_0900_ai_ci");
+                .OldAnnotation("Relational:Collation", "utf8mb4_unicode_ci");
         }
     }
 }
