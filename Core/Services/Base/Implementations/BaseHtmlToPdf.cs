@@ -1,6 +1,5 @@
 ﻿using Core.DTOs;
 using Core.Helpers;
-using Core.Markers;
 using Core.Models.Entities;
 using Core.Services.Base.Interfaces;
 using DinkToPdf;
