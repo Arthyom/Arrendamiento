@@ -1,0 +1,32 @@
+{
+  "markers": [
+    {
+      "key": "${Arrendatario.Nombre}",
+      "name": "ArrendatarioNombre",
+      "properties": [
+        { "property": "Nombre" },
+        { "property": "ApellidoPaterno" },
+        { "property": "ApellidoMaterno" }
+      ]
+    },
+
+    {
+      "key": "${Arrendatario.Direccion}",
+      "name": "ArrendatarioDireccion",
+      "property": "Direccion"
+    },
+
+    {
+      "key": "${Arrendatario.Municipio}",
+      "name": "ArrendatarioMunicipio",
+      "property": "Municipio"
+    },
+
+    {
+      "key": "${Arrendatario.Colonia}",
+      "name": "ArrendatarioColonia",
+      "property": "Colonia"
+    }
+
+  ]
+}

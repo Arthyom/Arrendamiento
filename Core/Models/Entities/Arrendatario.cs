@@ -19,7 +19,6 @@ public partial class Arrendatario : BaseEntity
     [StringLength(100)]
     public string ApellidoPaterno { get; set; }
 
-    [Required]
     [StringLength(100)]
     public string ApellidoMaterno { get; set; }
 
@@ -36,7 +35,6 @@ public partial class Arrendatario : BaseEntity
     [StringLength(100)]
     public string Direccion { get; set; }
 
-    [Required]
     [StringLength(100)]
     public string Municipio { get; set; }
 

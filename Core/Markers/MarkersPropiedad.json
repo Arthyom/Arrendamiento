@@ -1,0 +1,29 @@
+{
+  "markers": [
+
+    {
+      "key": "${Propiedad.Direccion}",
+      "name": "PropiedadDireccion",
+      "property": "Direccion"
+    },
+    {
+      "key": "${Propiedad.Municipio}",
+      "name": "PropiedadMunicipio",
+      "property": "Municipio"
+    },
+    {
+      "key": "${Propiedad.Colonia}",
+      "name": "PropiedadColonia",
+      "property": "Colonia"
+    },
+    {
+      "key": "${Propiedad.Precio}",
+      "name": "PropiedadPrecio",
+      "property": "Precio"
+    },
+    {
+      "key": "${Propiedad.PrecioTexto}",
+      "name": "PropiedadPrecioTexto"
+    }
+  ]
+}

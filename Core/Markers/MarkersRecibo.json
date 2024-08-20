@@ -1,0 +1,29 @@
+{
+  "markers": [
+
+    {
+      "key": "${Recibo.FechaHoraEmision}",
+      "name": "ReciboFechaHoraEmision",
+      "property": "CreatedAt"
+    },
+    {
+      "key": "${Recibo.IdentificadorUnico}",
+      "name": "ReciboIdentificadorUnico",
+      "property": "Identificador"
+    },
+    {
+      "key": "${Recibo.Concepto}",
+      "name": "ReciboConcepto",
+      "property": "Concepto"
+    },
+    {
+      "key": "${Recibo.Total}",
+      "name": "ReciboTotal",
+      "property": "Total"
+    },
+    {
+      "key": "${Recibo.TotalPrecioTexto}",
+      "name": "ReciboTotalPrecioTexto"
+    }
+  ]
+}

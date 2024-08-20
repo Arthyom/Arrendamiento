@@ -3,6 +3,8 @@ using Core.Services.Base.Implementations;
 using Core.Services.Base.Interfaces;
 using Core.Services.Common.Implementations;
 using Core.Services.Common.Interfaces;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,9 +22,22 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddScoped( typeof(IServiceBase<>), typeof(ServiceBase<>) );
+builder.Services.AddScoped( typeof(IServiceDocBase<>), typeof(ServiceDocBase<>) );
 builder.Services.AddScoped( typeof(IRepoBase<>), typeof(RepoBase<>) );
 
 builder.Services.AddScoped<IFiadorService, FiadorService>();
+builder.Services.AddScoped<IArrendadorService, ArrendadorService>();
+builder.Services.AddScoped<IArrendatarioService, ArrendatarioService>();
+builder.Services.AddScoped<IContratoService, ContratoService>();
+builder.Services.AddScoped<IReciboService, ReciboService>();
+builder.Services.AddScoped<IPropiedadService, PropiedadService>();
+
+builder.Services.AddScoped<IBaseHtmlToPdf, BaseHtmlToPdf>();
+
+
+
+
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 var cn = builder.Configuration.GetConnectionString("Arrendamiento");
 

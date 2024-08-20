@@ -1,0 +1,26 @@
+{
+  "markers": [
+    {
+      "key": "${Contrato.FechaInicio}",
+      "name": "ContratoFechaInicio",
+      "property": "CreatedAt"
+    },
+    {
+      "key": "${Contrato.FechaTermino}",
+      "name": "ContratoFechaTermino",
+      "property": "Termino"
+    },
+    {
+      "key": "${Contrato.FechaInicioMesDia}",
+      "name": "ContratoFechaInicioMesDia"
+    },
+    {
+      "key": "${Contrato.FechaTerminoMesDia}",
+      "name": "ContratoFechaTerminoMesDia"
+    },
+    {
+      "key": "${Contrato.FechaInicioLarga}",
+      "name": "ContratoFechaInicioLarga"
+    }
+  ]
+}

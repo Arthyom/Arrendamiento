@@ -15,42 +15,106 @@ namespace Arrendamiento.Controllers.Base
 
         public BaseController(IServiceBase<TBaseEntity> serviceBase)
         {
-
             _serviceBase = serviceBase;
+
 
         }
 
 
         // GET: api/<PropiedadesController>
         [HttpGet]
-        public async Task<IEnumerable<TBaseEntity>?> Get()
+        public async Task<IActionResult> Get()
         {
-            return await _serviceBase.GetAllAsync();
+            try
+            {
+                var response = await _serviceBase.GetAllAsync();
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
+
+      
 
         // GET api/<PropiedadesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                var response = await _serviceBase.GetByIdAsync(id);
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
 
         // POST api/<PropiedadesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] TBaseEntity toCreate)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _serviceBase.Begin();
+                    var response = await _serviceBase.CreateAsync(toCreate);
+                    _serviceBase.Commit();
+                    return Ok(response);
+                }
+                return BadRequest();
+            }
+            catch (Exception e)
+            {
+                _serviceBase.RollBack();
+                return Problem(e.Message);
+            }
         }
 
         // PUT api/<PropiedadesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] TBaseEntity toUpdate)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _serviceBase.Begin();
+                    var response = await _serviceBase.UpdateAsync(id, toUpdate);
+                    _serviceBase.Commit();
+                    return Ok(response);
+                }
+                return BadRequest();
+            }
+            catch (Exception e)
+            {
+                _serviceBase.RollBack();
+                return Problem(e.Message);
+            }
         }
 
         // DELETE api/<PropiedadesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+
+                _serviceBase.Begin();
+                var response = await _serviceBase.GetAllAsync();
+                _serviceBase.Commit();
+                return Ok(response);
+
+            }
+            catch (Exception e)
+            {
+                _serviceBase.RollBack();
+                return Problem(e.Message);
+            }
         }
     }
 }

@@ -17,16 +17,18 @@ public partial class Recibo : BaseEntity
 
     public int PropiedadId { get; set; }
 
-    [Column(TypeName = "datetime")]
-    public DateTime Emision { get; set; }
+    public bool Pagado { get; set; }
+
+    public string Concepto { get; set; }
+
 
     [Column(TypeName = "datetime")]
-    public DateTime Pago { get; set; }
+    public DateTime? FechaPago { get; set; }
 
     [Required]
     [StringLength(100)]
     public string Identificador { get; set; }
 
     [Precision(10, 0)]
-    public decimal Monto { get; set; }
+    public decimal Total { get; set; }
 }

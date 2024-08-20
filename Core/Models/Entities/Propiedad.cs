@@ -14,6 +14,10 @@ public partial class Propiedad : BaseEntity
     [StringLength(100)]
     public string Alias { get; set; }
 
+    [Required]  
+    [StringLength(100)]
+    public string Nombre { get; set; }
+
     [Precision(10, 0)]
     public decimal Precio { get; set; }
 
@@ -23,7 +27,6 @@ public partial class Propiedad : BaseEntity
     [StringLength(100)]
     public string Direccion { get; set; }
 
-    [Required]
     [StringLength(100)]
     public string Municipio { get; set; }
 

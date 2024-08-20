@@ -1,0 +1,32 @@
+{
+  "markers": [
+    {
+      "key": "${Fiador.Nombre}",
+      "name": "FiadorNombre",
+      "properties": [
+        { "property": "Nombre" },
+        { "property": "ApellidoPaterno" },
+        { "property": "ApellidoMaterno" }
+      ]
+    },
+
+    {
+      "key": "${Fiador.Direccion}",
+      "name": "FiadorDireccion",
+      "property": "Direccion"
+    },
+
+    {
+      "key": "${Fiador.Municipio}",
+      "name": "FiadorMunicipio",
+      "property": "Municipio"
+    },
+
+    {
+      "key": "${Fiador.Colonia}",
+      "name": "FiadorColonia",
+      "property": "Colonia"
+    }
+
+  ]
+}

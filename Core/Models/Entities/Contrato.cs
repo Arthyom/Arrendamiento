@@ -11,16 +11,16 @@ namespace Core.Models.Entities;
 [Table("contrato")]
 public partial class Contrato : BaseEntity
 {
+    [Required]
     public int ArrendadorId { get; set; }
 
+    [Required]
     public int ArrendatarioId { get; set; }
 
+    [Required]
     public int PropiedadId { get; set; }
 
     public int FiadorId { get; set; }
-
-    [Column(TypeName = "datetime")]
-    public DateTime Emision { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime Termino { get; set; }

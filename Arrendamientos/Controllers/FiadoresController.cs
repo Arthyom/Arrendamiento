@@ -10,7 +10,8 @@ namespace Arrendamiento.Controllers
 {
     public class FiadoresController : BaseController<Fiador, IFiadorService>
     {
-        public FiadoresController(IFiadorService serviceBase) : base(serviceBase)
+        public FiadoresController(IFiadorService serviceBase) 
+            : base(serviceBase)
         {
         }
 

@@ -36,7 +36,6 @@ public partial class Arrendador : BaseEntity
     [StringLength(100)]
     public string Direccion { get; set; }
 
-    [Required]
     [StringLength(100)]
     public string Municipio { get; set; }
 
