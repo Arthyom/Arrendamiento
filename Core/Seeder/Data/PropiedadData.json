@@ -1,0 +1,23 @@
+{
+  "type": "table",
+  "name": "propiedad",
+  "database": "arrendamiento_1",
+  "data": [
+    {
+      "Id": "1",
+      "Alias": "Dep. Artemiox",
+      "Precio": "3000",
+      "Libre": "0",
+      "Direccion": "Queretaro #57",
+      "Municipio": "Moroleon",
+      "Colonia": "Progreso",
+      "CreatedAt": "2024-08-09 00:00:00",
+      "UpdatedAt": "2024-08-09 00:00:00",
+      "DeletedAt": "2024-08-09 00:00:00",
+      "CreatedBy": "1",
+      "UpdatedBy": "0",
+      "DeletedBy": "0",
+      "Nombre": "Queretaro Dep. #1"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 using Core.Models.Context;
+using Core.Models.Entities;
 using Core.Services.Base.Implementations;
 using Core.Services.Base.Interfaces;
 using Core.Services.Common.Implementations;
@@ -6,6 +7,7 @@ using Core.Services.Common.Interfaces;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddScoped( typeof(IServiceBase<>), typeof(ServiceBase<>) );
 builder.Services.AddScoped( typeof(IServiceDocBase<>), typeof(ServiceDocBase<>) );
+builder.Services.AddScoped( typeof(ISeederFacade<>), typeof(SeederFacade<>) );
 builder.Services.AddScoped( typeof(IRepoBase<>), typeof(RepoBase<>) );
 
 builder.Services.AddScoped<IFiadorService, FiadorService>();
@@ -53,6 +56,25 @@ var app = builder.Build();
 //}
 
 //app.UseHttpsRedirection();
+
+
+using (var scope = app.Services.CreateScope())
+{
+	Type[] types = [typeof(Propiedad), typeof(Arrendador), typeof(Arrendatario)];
+	var dbContext = scope.ServiceProvider.GetRequiredService<ArrendamientoContext>();
+
+	dbContext.Database.Migrate();
+
+	foreach (var type in types)
+	{
+		var specific = typeof(SeederFacade<>).MakeGenericType(type);
+		var target = Activator.CreateInstance(specific,dbContext);
+
+		var mInfo = specific.GetMethod("Seed");
+
+		var k = mInfo.Invoke(target, null);
+	}
+}
 
 app.UseAuthorization();
 

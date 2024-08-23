@@ -10,6 +10,14 @@ namespace Core.Helpers
 {
 	public static class StringExtention
 	{
+		public static string CorrectSeederBoolen(this string seederSource)
+		{
+			seederSource = seederSource.Replace("\"Libre\": \"0\"", "\"Libre\": \"false\"");
+			seederSource = seederSource.Replace("\"Libre\": \"1\"", "\"Libre\": \"true\"");
+
+			return seederSource;
+		}
+
 		public static string ToDateFormat(this DateTime currentDate, string dateFormat = "dd 'de' MMMM 'del' yyyy")
 		{
 			var ci = new CultureInfo("es-ES", false);

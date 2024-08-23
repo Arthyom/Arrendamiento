@@ -19,9 +19,8 @@ public partial class Arrendador : BaseEntity
     [StringLength(100)]
     public string ApellidoPaterno { get; set; }
 
-    [Required]
     [StringLength(100)]
-    public string ApellidoMaterno { get; set; }
+    public string ApellidoMaterno { get; set; } = null;
 
     [StringLength(100)]
     public string Curp { get; set; }

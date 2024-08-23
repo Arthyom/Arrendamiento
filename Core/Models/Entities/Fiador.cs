@@ -20,7 +20,7 @@ public partial class Fiador : BaseEntity
     public string ApellidoPaterno { get; set; }
 
     [StringLength(100)]
-    public string ApellidoMaterno { get; set; }
+    public string ApellidoMaterno { get; set; } = null;
 
     [StringLength(100)]
     public string Alias { get; set; }

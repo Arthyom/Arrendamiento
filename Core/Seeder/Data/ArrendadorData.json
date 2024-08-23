@@ -1,0 +1,25 @@
+{
+  "type": "table",
+  "name": "arrendador",
+  "database": "arrendamiento_1",
+  "data": [
+    {
+      "Id": "1",
+      "Nombre": "Artemio",
+      "ApellidoPaterno": "Gonzalez",
+      "ApellidoMaterno": "Gaviña",
+      "Curp": null,
+      "Rfc": null,
+      "Alias": null,
+      "Direccion": "Benito Juarez #27",
+      "Municipio": "Moroleon",
+      "Colonia": "Centro",
+      "CreatedAt": "2024-08-23 06:06:03",
+      "UpdatedAt": null,
+      "DeletedAt": null,
+      "CreatedBy": "0",
+      "UpdatedBy": null,
+      "DeletedBy": null
+    }
+  ]
+}

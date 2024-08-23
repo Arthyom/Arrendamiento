@@ -13,6 +13,9 @@
     <None Remove="Markers\MarkersFiador.json" />
     <None Remove="Markers\MarkersPropiedad.json" />
     <None Remove="Markers\MarkersRecibo.json" />
+    <None Remove="Seeder\Data\ArrendadorData.json" />
+    <None Remove="Seeder\Data\ArrendatarioData.json" />
+    <None Remove="Seeder\Data\PropiedadData.json" />
     <None Remove="Templates\Html\Contrato.html" />
     <None Remove="Templates\Html\Recibo.html" />
   </ItemGroup>
@@ -34,6 +37,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Markers\MarkersPropiedad.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seeder\Data\ArrendatarioData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seeder\Data\ArrendadorData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seeder\Data\PropiedadData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Templates\Html\Contrato.html">
@@ -61,6 +73,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
