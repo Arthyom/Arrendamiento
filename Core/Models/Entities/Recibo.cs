@@ -13,6 +13,8 @@ public partial class Recibo : BaseEntity
 {
     public int ArrendatarioId { get; set; }
 
+    public int ReImpresionId { get; set; }
+
     public int ArrendadorId { get; set; }
 
     public int PropiedadId { get; set; }
@@ -31,4 +33,8 @@ public partial class Recibo : BaseEntity
 
     [Precision(10, 0)]
     public decimal Total { get; set; }
+
+    public List<ReImpresion> ReImpresion { get; set; } = new List<ReImpresion>();
+
+
 }

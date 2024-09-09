@@ -21,6 +21,8 @@ public partial class ArrendamientoContext : DbContext
     {
     }
 
+    public virtual DbSet<ReImpresion> ReImpresion { get; set; }
+    public virtual DbSet<Renovacion> Renovacion { get; set; }
     public virtual DbSet<Arrendador> Arrendador { get; set; }
 
     public virtual DbSet<Arrendatario> Arrendatario { get; set; }
@@ -55,6 +57,21 @@ public partial class ArrendamientoContext : DbContext
         modelBuilder
             .UseCollation("utf8mb4_unicode_ci")
             .HasCharSet("utf8mb4");
+
+        modelBuilder.Entity<ReImpresion>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+           
+        });
+
+        modelBuilder.Entity<Renovacion>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+
+        });
+
 
         modelBuilder.Entity<Arrendador>(entity =>
         {

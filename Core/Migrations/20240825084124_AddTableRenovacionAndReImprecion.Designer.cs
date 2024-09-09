@@ -4,6 +4,7 @@ using Core.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.Migrations
 {
     [DbContext(typeof(ArrendamientoContext))]
-    partial class ArrendamientoContextModelSnapshot : ModelSnapshot
+    [Migration("20240825084124_AddTableRenovacionAndReImprecion")]
+    partial class AddTableRenovacionAndReImprecion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -352,9 +355,6 @@ namespace Core.Migrations
                     b.Property<decimal>("Precio")
                         .HasPrecision(10)
                         .HasColumnType("decimal(10,0)");
-
-                    b.Property<int>("TypeProperty")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime");

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Models.Entities;
@@ -20,6 +21,8 @@ public partial class Propiedad : BaseEntity
 
     [Precision(10, 0)]
     public decimal Precio { get; set; }
+
+    public TypePropertyEnum TypeProperty { get; set; }
 
     public bool Libre { get; set; }
 

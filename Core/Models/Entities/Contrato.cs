@@ -24,4 +24,9 @@ public partial class Contrato : BaseEntity
 
     [Column(TypeName = "datetime")]
     public DateTime Termino { get; set; }
+
+
+    [NotMapped]
+    public List<Renovacion> Renovacion { get; set; } = new List<Renovacion>();
+
 }

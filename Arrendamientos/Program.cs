@@ -18,15 +18,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.ResolveConflictingActions( s => s.First() );
+    c.ResolveConflictingActions(s => s.First());
 });
 
 
 
-builder.Services.AddScoped( typeof(IServiceBase<>), typeof(ServiceBase<>) );
-builder.Services.AddScoped( typeof(IServiceDocBase<>), typeof(ServiceDocBase<>) );
-builder.Services.AddScoped( typeof(ISeederFacade<>), typeof(SeederFacade<>) );
-builder.Services.AddScoped( typeof(IRepoBase<>), typeof(RepoBase<>) );
+builder.Services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
+builder.Services.AddScoped(typeof(IServiceDocBase<>), typeof(ServiceDocBase<>));
+builder.Services.AddScoped(typeof(ISeederFacade<>), typeof(SeederFacade<>));
+builder.Services.AddScoped(typeof(IRepoBase<>), typeof(RepoBase<>));
 
 builder.Services.AddScoped<IFiadorService, FiadorService>();
 builder.Services.AddScoped<IArrendadorService, ArrendadorService>();
@@ -47,8 +47,8 @@ var cn = builder.Configuration.GetConnectionString("Arrendamiento");
 builder.Services.AddDbContext<ArrendamientoContext>(opt => opt.UseMySql(cn, ServerVersion.AutoDetect(cn)));
 
 var app = builder.Build();
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
@@ -60,20 +60,30 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-	Type[] types = [typeof(Propiedad), typeof(Arrendador), typeof(Arrendatario)];
-	var dbContext = scope.ServiceProvider.GetRequiredService<ArrendamientoContext>();
+    Type[] types = [
+        typeof(Propiedad),
+        typeof(Arrendador),
+        typeof(Arrendatario),
+        typeof(Contrato),
+        typeof(Fiador)
+    ];
 
-	dbContext.Database.Migrate();
+    var dbContext = scope.ServiceProvider.GetRequiredService<ArrendamientoContext>();
 
-	foreach (var type in types)
-	{
-		var specific = typeof(SeederFacade<>).MakeGenericType(type);
-		var target = Activator.CreateInstance(specific,dbContext);
+    dbContext.Database.Migrate();
 
-		var mInfo = specific.GetMethod("Seed");
+    foreach (var type in types)
+    {
+        var specific = typeof(SeederFacade<>).MakeGenericType(type);
+        var target = Activator.CreateInstance(specific, dbContext);
 
-		var k = mInfo.Invoke(target, null);
-	}
+        var mInfo = specific.GetMethod("Seed");
+
+        if (mInfo == null)
+            throw new Exception("Error seeding data");
+        else
+            mInfo.Invoke(target, null);
+    }
 }
 
 app.UseAuthorization();

@@ -15,6 +15,8 @@
     <None Remove="Markers\MarkersRecibo.json" />
     <None Remove="Seeder\Data\ArrendadorData.json" />
     <None Remove="Seeder\Data\ArrendatarioData.json" />
+    <None Remove="Seeder\Data\ContratoData.json" />
+    <None Remove="Seeder\Data\FiadorData.json" />
     <None Remove="Seeder\Data\PropiedadData.json" />
     <None Remove="Templates\Html\Contrato.html" />
     <None Remove="Templates\Html\Recibo.html" />
@@ -43,6 +45,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Seeder\Data\ArrendadorData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seeder\Data\ContratoData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seeder\Data\FiadorData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Seeder\Data\PropiedadData.json">
