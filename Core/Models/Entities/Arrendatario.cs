@@ -42,4 +42,8 @@ public partial class Arrendatario : BaseEntity
     [Required]
     [StringLength(100)]
     public string Colonia { get; set; }
+
+    public int? PropiedadId { get; set; }
+
+    public Propiedad? Propiedad { get; set; }
 }
