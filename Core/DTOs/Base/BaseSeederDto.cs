@@ -15,6 +15,9 @@ namespace Core.DTOs.Base
 
 		public string? DataBase { get; set; }
 
+        public string? Comment { get; set; }
+
+
 		public List<TBaseEntity>? Data { get; set; }
 	}
 }

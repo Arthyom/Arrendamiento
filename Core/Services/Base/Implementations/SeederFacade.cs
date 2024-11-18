@@ -42,9 +42,14 @@ namespace Core.Services.Base.Implementations
 					{
 						stringContent = reader.ReadToEnd().CorrectSeederBoolen();
 
-						var seederData = JsonConvert.DeserializeObject<BaseSeederDto<TBaseEntity>>(stringContent);
+						var seederList = JsonConvert
+											.DeserializeObject
+												<List<BaseSeederDto<TBaseEntity>>>(stringContent);
 
-						if (seederData != null)
+						var seederData = seederList[2];
+
+
+                        if (seederData != null)
 							if (seederData.Data != null)
 							{
 								if (seederData.Data.Any())
