@@ -75,8 +75,8 @@ using (var scope = app.Services.CreateScope())
         typeof(Propiedad),
         typeof(Arrendador),
         typeof(Arrendatario),
+        typeof(Fiador),
         typeof(Contrato),
-        typeof(Fiador)
     ];
 
     var dbContext = scope.ServiceProvider.GetRequiredService<ArrendamientoContext>();
