@@ -46,16 +46,36 @@ var cn = builder.Configuration.GetConnectionString("Arrendamiento");
 
 builder.Services.AddDbContext<ArrendamientoContext>(opt => opt.UseMySql(cn, ServerVersion.AutoDetect(cn)));
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddDefaultPolicy(x =>
+//    {
+//        x
+//        .AllowAnyOrigin()
+//        .AllowAnyHeader()
+//        .AllowAnyMethod();
+//    });
+//});
+
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(x =>
+    options.AddPolicy("AllowOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
     {
-        x
-        .AllowAnyOrigin()
-        .AllowAnyHeader()
-        .AllowAnyMethod();
+        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost" );
     });
 });
+
 
 var app = builder.Build();
 app.UseSwagger();
@@ -96,10 +116,7 @@ using (var scope = app.Services.CreateScope())
             mInfo.Invoke(target, null);
     }
 }
-app.UseCors(   (pol) =>
-{
-    pol.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-}) ;
+app.UseCors();
 
 app.UseAuthorization();
 
