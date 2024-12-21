@@ -46,35 +46,35 @@ var cn = builder.Configuration.GetConnectionString("Arrendamiento");
 
 builder.Services.AddDbContext<ArrendamientoContext>(opt => opt.UseMySql(cn, ServerVersion.AutoDetect(cn)));
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddDefaultPolicy(x =>
-//    {
-//        x
-//        .AllowAnyOrigin()
-//        .AllowAnyHeader()
-//        .AllowAnyMethod();
-//    });
-//});
-
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowOrigin",
-        builder =>
-        {
-            builder.WithOrigins("http://localhost")
-                   .AllowAnyHeader()
-                   .AllowAnyMethod();
-        });
-});
-
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(builder =>
+    options.AddDefaultPolicy(x =>
     {
-        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost" );
+        x
+        .AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
     });
 });
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowOrigin",
+//        builder =>
+//        {
+//            builder.WithOrigins("http://localhost")
+//                   .AllowAnyHeader()
+//                   .AllowAnyMethod();
+//        });
+//});
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddDefaultPolicy(builder =>
+//    {
+//        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost" );
+//    });
+//});
 
 
 var app = builder.Build();
