@@ -81,9 +81,15 @@ namespace Core.Services.Base.Implementations
             return toCreate;
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<TBaseEntity?> DeleteAsync(TBaseEntity toDelete)
         {
-            throw new NotImplementedException();
+            toDelete.DeletedAt = DateTime.Now;
+            toDelete.DeletedBy = 1;
+
+            var response = _entity.Remove(toDelete).Entity;
+            await _context.SaveChangesAsync();
+
+            return response;
         }
 
 

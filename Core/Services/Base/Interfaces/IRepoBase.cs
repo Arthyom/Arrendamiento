@@ -23,7 +23,7 @@ namespace Core.Services.Base.Interfaces
 
         public Task<TBaseEntity?> UpdateAsync(int id, TBaseEntity toEdit);
 
-        public Task<bool> DeleteAsync(int id);
+        public Task<TBaseEntity?> DeleteAsync(TBaseEntity toDelete);
 
         public RepoBase<TInstance> createInstance<TInstance>() where TInstance : BaseEntity;
 

@@ -58,7 +58,14 @@ namespace Core.Services.Base.Implementations
 
 		public async Task<bool> DeleteAsync(int id)
 		{
-			return await _repoGenerico.DeleteAsync(id);
+			var item = await _repoGenerico.GetByIdAsync(id);
+			
+			if(item == null)
+				return false;
+
+			var response = await _repoGenerico.DeleteAsync(item);
+
+			return response != null ? true: false; 
 		}
 
 		public async Task<MarkerDtoCollection?> GetMarkersAsync<TEntity>(int id) where TEntity : BaseEntity
