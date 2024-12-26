@@ -105,7 +105,7 @@ namespace Arrendamiento.Controllers.Base
             {
 
                 _serviceBase.Begin();
-                var response = await _serviceBase.GetAllAsync();
+                var response = await _serviceBase.DeleteAsync(id);
                 _serviceBase.Commit();
                 return Ok(response);
 
