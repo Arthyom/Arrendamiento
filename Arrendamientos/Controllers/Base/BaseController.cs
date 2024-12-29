@@ -2,6 +2,7 @@
 using Core.Services.Base.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Arrendamiento.Controllers.Base
 {
@@ -109,6 +110,10 @@ namespace Arrendamiento.Controllers.Base
                 _serviceBase.Commit();
                 return Ok(response);
 
+            }
+            catch(DbUpdateException dbE){
+                 _serviceBase.RollBack();
+                return Problem(dbE.Message, "Db interaction error");
             }
             catch (Exception e)
             {

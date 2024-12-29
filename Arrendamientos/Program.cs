@@ -34,6 +34,8 @@ builder.Services.AddScoped<IArrendatarioService, ArrendatarioService>();
 builder.Services.AddScoped<IContratoService, ContratoService>();
 builder.Services.AddScoped<IReciboService, ReciboService>();
 builder.Services.AddScoped<IPropiedadService, PropiedadService>();
+builder.Services.AddScoped<IDeployService, DeployService>();
+
 
 builder.Services.AddScoped<IBaseHtmlToPdf, BaseHtmlToPdf>();
 
