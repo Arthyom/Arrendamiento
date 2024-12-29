@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using Core.Enums;
 using Core.Models.Entities;
 using Core.Services.Base.Implementations;
 using Core.Services.Base.Interfaces;
@@ -24,7 +25,26 @@ public class DeployService : ServiceBase<Deploy>, IDeployService
 		return new Deploy();
 	}
 
-	private async Task DeployTarget( string targetPath )
+    public async Task<Deploy> Deploy(TypeDeployEnum target)
+    {
+		string pathToRun = "";
+		switch (target)
+		{
+			case TypeDeployEnum.backEnd:
+				pathToRun = "/home/frodo/Documents/Arrendamiento/backEnd.sh";
+			break;	
+
+			case TypeDeployEnum.frontEnd:
+				pathToRun = "/home/frodo/Documents/Arrendamiento/backEnd.sh";
+			break;
+		}
+
+		await DeployTarget(pathToRun);
+
+		return new Deploy();
+    }
+
+    private async Task DeployTarget( string targetPath )
 	{
 		Process p = new Process();
 
