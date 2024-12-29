@@ -15,8 +15,8 @@ public class DeployService : ServiceBase<Deploy>, IDeployService
 
     public  new async Task<Deploy?> CreateAsync(Deploy toCreate)
 	{
-		string deployBackEnd =  "/var/www/html/ArrendamientoGit/backEnd.sh";
-		string deployFrontEnd = "/var/www/html/ArrendamientosFrontoGit/frontEnd.sh";
+		string deployBackEnd =  "/home/frodo/Documents/Arrendamiento/backEnd.sh";
+		string deployFrontEnd = "/home/frodo/Documents/Arrendamiento/frontEnd.sh";
 
 		await DeployTarget(deployBackEnd);
 		await DeployTarget(deployFrontEnd);
