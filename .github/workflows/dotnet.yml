@@ -26,7 +26,9 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
     - name: Deploy
+      id: deploy
       timeout-minutes: 1
       uses: muhfaris/request-action@v0.1.2
       with:
@@ -38,6 +40,14 @@ jobs:
             #  "key": "value"
             #}
           method: POST
+
+    - name: Show API Response Status
+      run: |
+        echo "Response Status: ${{ steps.deploy.outputs.response-status }}"
+  
+    - name: Show API Response Data
+      run: |
+        echo "Response Data: ${{ steps.deploy.outputs.response-data }}"
 
 
       
