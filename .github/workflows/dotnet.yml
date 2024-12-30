@@ -34,7 +34,7 @@ jobs:
       with:
           #url: ${{ secrets.API_URL }}
           #headers: ${{ secrets.API_HEADERS }}
-          url: http://alfredowflsyopollo.us:5000/api/deploy/1
+          url: 'http://alfredowflsyopollo.us:5000/api/deploy/1'
           #body: |
            # {
             #  "key": "value"
