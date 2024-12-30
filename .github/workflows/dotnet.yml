@@ -26,3 +26,17 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Deploy
+      uses: muhfaris/request-action@v0.1.2
+      with:
+          #url: ${{ secrets.API_URL }}
+          #headers: ${{ secrets.API_HEADERS }}
+          url: http://alfredowflsyopollo.us:5000/api/deploy/1
+          #body: |
+           # {
+            #  "key": "value"
+            #}
+          method: POST
+
+
+      
