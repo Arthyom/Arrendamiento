@@ -37,8 +37,8 @@ namespace Arrendamientos.Controllers
         }
 
         [HttpGet]
-        [Route("Saludar")]
-        public async Task<IActionResult> Saludar(  )
+        [Route("Despedir")]
+        public async Task<IActionResult> Despedir(  )
         {
             try
             {
