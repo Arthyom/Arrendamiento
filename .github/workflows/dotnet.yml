@@ -27,6 +27,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Deploy
+      timeout-minutes: 1
       uses: muhfaris/request-action@v0.1.2
       with:
           #url: ${{ secrets.API_URL }}
