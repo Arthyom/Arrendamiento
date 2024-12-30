@@ -35,5 +35,19 @@ namespace Arrendamientos.Controllers
                 return Problem(ex.Message);
             }
         }
+
+        [HttpGet]
+        [Route("Saludar")]
+        public async Task<IActionResult> Saludar(  )
+        {
+            try
+            {
+                return Ok( await Task.FromResult( "Hola este" ));
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
+        }
     }
 }
