@@ -5,5 +5,5 @@ dotnet build
 #loca cd /home/frodo/Documents/Repos/Arrendamiento/Arrendamientos/bin/Debug/net8.0/
 #cp -R  * /var/www/html/Arrendamientos/
 #cp -R  * /var/www/html/ArrendamientoBack/
-service qa.arrendamientos.netcore8 stop
-service qa.arrendamientos.netcore8 start
+sudo service qa.arrendamientos.netcore8 stop
+sudo service qa.arrendamientos.netcore8 start
