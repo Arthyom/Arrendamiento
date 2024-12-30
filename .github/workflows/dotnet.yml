@@ -34,6 +34,8 @@ jobs:
       with:
         url: 'http://alfredowflsyopollo.us:5000/api/deploy/1'
         method: 'POST'
+        timeout: 100000
+
         
 
       
