@@ -21,28 +21,16 @@ namespace Arrendamientos.Controllers
             _deployService = serviceBase;
         }
 
-        [HttpPost]
-        [Route("{target}")]
-        public async Task<IActionResult> Deploy( [FromRoute] TypeDeployEnum target, [FromBody] Deploy? deploy )
+        [HttpGet]
+        [Route("{target}/{deployKey}")]
+        public async Task<IActionResult> Deploy( [FromRoute] TypeDeployEnum target, [FromRoute] string deployKey )
         {
             try
             {
+                if(deployKey!="e753509f-f46e-4fd2-881a-2b1631ee0852")
+                    return Problem("Not comes from valid origin");
                 var response = await _deployService.Deploy(target);
                 return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return Problem(ex.Message);
-            }
-        }
-
-        [HttpGet]
-        [Route("Denunciar")]
-        public async Task<IActionResult> Denunciar(  )
-        {
-            try
-            {
-                return Ok( await Task.FromResult( "Hola este" ));
             }
             catch (Exception ex)
             {

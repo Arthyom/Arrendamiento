@@ -32,8 +32,8 @@ jobs:
       #timeout-minutes: 1
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'http://alfredowflsyopollo.us:5000/api/deploy/1'
-        method: 'POST'
+        url: '${{secrets.QA_ARRENDAMIENTO_DEPLOY_BACKEND}}/${{secrets.QA_DEPLOY_KEY}}' #'http://alfredowflsyopollo.us:5000/api/deploy/1'
+        method: 'GET'
         timeout: 100000
 
         
