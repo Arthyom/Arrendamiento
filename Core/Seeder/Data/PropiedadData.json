@@ -1,13 +1,10 @@
 [
   {
     "type": "header",
-    "version": "5.2.1",
+    "version": "5.2.1deb3",
     "comment": "Export to JSON plugin for PHPMyAdmin"
   },
-  {
-    "type": "database",
-    "name": "arrendamiento"
-  },
+  { "type": "database", "name": "arrendamiento" },
   {
     "type": "table",
     "name": "propiedad",
@@ -67,7 +64,7 @@
       {
         "Id": "4",
         "Alias": "Karen",
-        "Precio": "3000",
+        "Precio": "3500",
         "Libre": "0",
         "Direccion": "Queretaro #57A. Dep. #3",
         "Municipio": "Moroleon",
@@ -84,7 +81,7 @@
       {
         "Id": "5",
         "Alias": "Tarkan",
-        "Precio": "3000",
+        "Precio": "3500",
         "Libre": "0",
         "Direccion": "Queretaro #57A Dep. #4",
         "Municipio": "Moroleon",
@@ -220,7 +217,7 @@
       {
         "Id": "15",
         "Alias": "Jesus BosBony",
-        "Precio": "1600",
+        "Precio": "1800",
         "Libre": "0",
         "Direccion": "Miguel Lerdo de Tejada #57A Dep. #1",
         "Municipio": "Moroleon",
@@ -236,8 +233,8 @@
       },
       {
         "Id": "16",
-        "Alias": "Miguel Barcenas",
-        "Precio": "1600",
+        "Alias": "Maria del Carmen",
+        "Precio": "2000",
         "Libre": "0",
         "Direccion": "Miguel Lerdo de Tejada #57A Dep. #2",
         "Municipio": "Moroleon",
@@ -254,7 +251,7 @@
       {
         "Id": "17",
         "Alias": "Maricela",
-        "Precio": "1600",
+        "Precio": "1800",
         "Libre": "0",
         "Direccion": "Miguel Lerdo de Tejada #57A Dep. #3",
         "Municipio": "Moroleon",
@@ -271,7 +268,7 @@
       {
         "Id": "18",
         "Alias": "Maestra",
-        "Precio": "1600",
+        "Precio": "1800",
         "Libre": "0",
         "Direccion": "Miguel Lerdo de Tejada #57A Dep. #4",
         "Municipio": "Moroleon",
@@ -288,7 +285,7 @@
       {
         "Id": "19",
         "Alias": "Juan Carlos",
-        "Precio": "1600",
+        "Precio": "1800",
         "Libre": "0",
         "Direccion": "Miguel Lerdo de Tejada #57A Dep. #5",
         "Municipio": "Moroleon",
@@ -743,23 +740,6 @@
         "DeletedBy": null,
         "Nombre": "Queretaro Bodega #2",
         "TypeProperty": "4"
-      },
-      {
-        "Id": "46",
-        "Alias": "ejemplo",
-        "Precio": "1000",
-        "Libre": "1",
-        "Direccion": "string",
-        "Municipio": "string",
-        "Colonia": "string",
-        "CreatedAt": "2024-11-08 14:30:06",
-        "UpdatedAt": "2024-11-08 20:29:49",
-        "DeletedAt": "2024-11-08 20:29:49",
-        "CreatedBy": "1",
-        "UpdatedBy": "0",
-        "DeletedBy": "0",
-        "Nombre": "ejemplo",
-        "TypeProperty": "1"
       }
     ]
   }

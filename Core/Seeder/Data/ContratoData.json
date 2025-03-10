@@ -1,13 +1,10 @@
 [
   {
     "type": "header",
-    "version": "5.2.1",
+    "version": "5.2.1deb3",
     "comment": "Export to JSON plugin for PHPMyAdmin"
   },
-  {
-    "type": "database",
-    "name": "arrendamiento"
-  },
+  { "type": "database", "name": "arrendamiento" },
   {
     "type": "table",
     "name": "contrato",
@@ -301,6 +298,20 @@
         "FiadorId": "10",
         "Termino": "0001-01-01 00:00:00",
         "CreatedAt": "2024-11-11 01:32:48",
+        "UpdatedAt": null,
+        "DeletedAt": null,
+        "CreatedBy": "1",
+        "UpdatedBy": null,
+        "DeletedBy": null
+      },
+      {
+        "Id": "22",
+        "ArrendadorId": "1",
+        "ArrendatarioId": "24",
+        "PropiedadId": "16",
+        "FiadorId": "11",
+        "Termino": "0001-01-01 00:00:00",
+        "CreatedAt": "2024-12-21 05:21:39",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": "1",
