@@ -24,10 +24,17 @@ public partial class Arrendatario : BaseEntity
     public string ApellidoMaterno { get; set; } = null;
 
     [StringLength(100)]
-    public string Curp { get; set; }
+    public string Curp { get; set; }= null;
 
     [StringLength(100)]
-    public string Rfc { get; set; }
+    public string Rfc { get; set; } = null;
+
+    [StringLength(100)]
+    public string Cp { get; set; } = null;
+
+    
+    [StringLength(100)]
+    public string Email { get; set; } = null;
 
     [StringLength(100)]
     public string Alias { get; set; }
@@ -38,6 +45,9 @@ public partial class Arrendatario : BaseEntity
 
     [StringLength(100)]
     public string Municipio { get; set; }
+
+    [StringLength(100)]
+    public string Telefono { get; set; }
 
     [Required]
     [StringLength(100)]

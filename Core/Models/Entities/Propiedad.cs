@@ -15,6 +15,9 @@ public partial class Propiedad : BaseEntity
     [StringLength(100)]
     public string Alias { get; set; }
 
+    [StringLength(100)]
+    public string? Interior { get; set; } 
+
     [Required]  
     [StringLength(100)]
     public string Nombre { get; set; }
