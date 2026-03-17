@@ -77,8 +77,8 @@ namespace Arrendamiento.Controllers.Base
         }
 
         // PUT api/<PropiedadesController>/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] TBaseEntity toUpdate)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Patch(int id, [FromBody] TBaseEntity toUpdate)
         {
             try
             {

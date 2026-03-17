@@ -2,6 +2,7 @@
 using Core.Services.Base.Implementations;
 using Core.Services.Base.Interfaces;
 using Core.Services.Common.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,24 @@ namespace Core.Services.Common.Implementations
     {
         public PropiedadService(IRepoBase<Propiedad> repoGenerico) : base(repoGenerico)
         {
+        }
+
+        public async new  Task<IEnumerable<Propiedad>?> GetAllAsync()
+        {
+            var s= await _repoGenerico.createInstance<Propiedad>()
+                            ._entity
+                            .Include(p => p.Interiores)
+                     
+                    
+                            
+                            
+                          
+                            
+                            .ToListAsync();
+
+
+
+           return s;
         }
     }
 }

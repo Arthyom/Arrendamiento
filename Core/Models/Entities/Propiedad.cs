@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Core.Enums;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,4 +40,11 @@ public partial class Propiedad : BaseEntity
     [Required]
     [StringLength(100)]
     public string Colonia { get; set; }
+
+    // public int? ArrendatarioId { get; set; } 
+
+    // public Arrendatario Arrendatario { get; set; }
+
+
+    public List<Interior> Interiores { get; set; }  = new List<Interior>();
 }

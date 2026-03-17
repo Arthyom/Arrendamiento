@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Models.Entities;
@@ -33,6 +34,8 @@ public partial class Recibo : BaseEntity
 
     [Precision(10, 0)]
     public decimal Total { get; set; }
+
+    public TypeRecipientEnum TipoRecibo { get; set; }
 
     public List<ReImpresion> ReImpresion { get; set; } = new List<ReImpresion>();
 

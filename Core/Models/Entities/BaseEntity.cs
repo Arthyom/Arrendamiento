@@ -5,9 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Models.Entities
 {
+    [PrimaryKey("Id")]
     public class BaseEntity
     {
         [Key]

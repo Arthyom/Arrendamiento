@@ -2,6 +2,7 @@
 using Core.Services.Base.Implementations;
 using Core.Services.Base.Interfaces;
 using Core.Services.Common.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,17 @@ namespace Core.Services.Common.Implementations
         public ArrendatarioService(IRepoBase<Arrendatario> repoGenerico) : base(repoGenerico)
         {
         }
+
+        public async new  Task<IEnumerable<Arrendatario>?> GetAllAsync()
+        {
+            return await _repoGenerico.createInstance<Arrendatario>()
+                            ._entity
+                            .AsQueryable()
+                            .Include( A => A.Interiores)
+                            .ThenInclude( i => i.Propiedad )
+                            .AsNoTracking(  )
+                            .ToListAsync();
+        }
+
     }
 }

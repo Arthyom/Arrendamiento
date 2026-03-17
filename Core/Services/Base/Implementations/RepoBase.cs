@@ -15,7 +15,7 @@ namespace Core.Services.Base.Implementations
     public class RepoBase<TBaseEntity> : IDisposable, IRepoBase<TBaseEntity> where TBaseEntity : BaseEntity
     {
         private readonly ArrendamientoContext _context;
-        private readonly DbSet<TBaseEntity> _entity;
+        public readonly DbSet<TBaseEntity> _entity;
         private IDbContextTransaction? _objTran;
         private bool _disposed;
 

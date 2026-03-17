@@ -53,7 +53,7 @@ public partial class Arrendatario : BaseEntity
     [StringLength(100)]
     public string Colonia { get; set; }
 
-    public int? PropiedadId { get; set; }
 
-    public Propiedad? Propiedad { get; set; }
+
+    public List<Interior> Interiores {get; set;} = new List<Interior>();
 }

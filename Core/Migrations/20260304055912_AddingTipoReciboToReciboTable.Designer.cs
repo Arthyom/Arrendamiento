@@ -4,6 +4,7 @@ using Core.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.Migrations
 {
     [DbContext(typeof(ArrendamientoContext))]
-    partial class ArrendamientoContextModelSnapshot : ModelSnapshot
+    [Migration("20260304055912_AddingTipoReciboToReciboTable")]
+    partial class AddingTipoReciboToReciboTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -171,6 +174,9 @@ namespace Core.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
+
+                    b.Property<int?>("PropiedadId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Rfc")
                         .HasMaxLength(100)
@@ -340,6 +346,9 @@ namespace Core.Migrations
                     b.Property<int?>("DeletedBy")
                         .HasColumnType("int");
 
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Etiqueta")
                         .HasColumnType("longtext");
 
@@ -381,6 +390,9 @@ namespace Core.Migrations
                     b.Property<string>("Alias")
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
+
+                    b.Property<int?>("ArrendatarioId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Colonia")
                         .IsRequired()
@@ -437,6 +449,8 @@ namespace Core.Migrations
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
+
+                    b.HasIndex("ArrendatarioId");
 
                     b.ToTable("propiedad");
                 });
@@ -595,6 +609,15 @@ namespace Core.Migrations
                     b.Navigation("Propiedad");
                 });
 
+            modelBuilder.Entity("Core.Models.Entities.Propiedad", b =>
+                {
+                    b.HasOne("Core.Models.Entities.Arrendatario", "Arrendatario")
+                        .WithMany("Propiedad")
+                        .HasForeignKey("ArrendatarioId");
+
+                    b.Navigation("Arrendatario");
+                });
+
             modelBuilder.Entity("Core.Models.Entities.ReImpresion", b =>
                 {
                     b.HasOne("Core.Models.Entities.Recibo", null)
@@ -607,6 +630,8 @@ namespace Core.Migrations
             modelBuilder.Entity("Core.Models.Entities.Arrendatario", b =>
                 {
                     b.Navigation("Interiores");
+
+                    b.Navigation("Propiedad");
                 });
 
             modelBuilder.Entity("Core.Models.Entities.Propiedad", b =>

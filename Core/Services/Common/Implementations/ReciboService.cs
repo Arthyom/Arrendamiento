@@ -49,6 +49,23 @@ namespace Core.Services.Common.Implementations
                 var a = await GetMarkersAsync<Arrendador>(recibo.ArrendadorId);
                 var s = await GetMarkersAsync<Arrendatario>(recibo.ArrendatarioId);
                 var p = await GetMarkersAsync<Propiedad>(recibo.PropiedadId);
+                
+                if (recibo.PropiedadId == 0 && p != null)
+                {
+                    if(p.markers != null)
+                    {
+                        p.markers[0].value = "";
+
+                        p.markers[1].value = recibo.Total.ToString("0.00");
+                        
+                        p.markers[2].value = recibo.Concepto;
+
+                        p.markers[3].value = recibo.Total.ToString("0.00");
+
+                        p.markers[4].value = recibo.Concepto;
+                    }
+                }
+
 
                 if (r == null || a == null || s == null || p == null)
                     throw new NotImplementedException();
@@ -65,6 +82,7 @@ namespace Core.Services.Common.Implementations
                     r.markers[precioTextoIndex].value = r?.markers[precioTotalIndex]?.value?.NumberToText();
 
 
+                    
                     var doc = await _baseHtmlToPdf.CreatePdfFor<Recibo>([r, a, s, p]);
 
                     var arrendatarioNombre = s.markers.Find(x => x.name == "ArrendatarioNombre");
@@ -82,6 +100,17 @@ namespace Core.Services.Common.Implementations
             throw new NotImplementedException();
         }
 
+        public async Task<Recibo> CreateSingle(Recibo toCreate)
+        {
+            DateTime fechaPago = toCreate.FechaPago.HasValue ? toCreate.FechaPago.Value : DateTime.Now;
+            toCreate.Identificador = Guid.NewGuid().ToString();
+            toCreate.FechaPago = fechaPago;
+            Recibo? response =  await _repoGenerico.CreateAsync(toCreate);
 
+            if (response != null)
+                return response;
+            
+            throw new Exception();
+        }
     }
 }

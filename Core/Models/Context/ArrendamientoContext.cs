@@ -21,6 +21,9 @@ public partial class ArrendamientoContext : DbContext
     {
     }
 
+    public virtual DbSet<Interior> Interior { get; set; }
+
+
     public virtual DbSet<ReImpresion> ReImpresion { get; set; }
     public virtual DbSet<Renovacion> Renovacion { get; set; }
     public virtual DbSet<Arrendador> Arrendador { get; set; }

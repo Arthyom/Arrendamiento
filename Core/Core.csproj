@@ -15,6 +15,7 @@
     <None Remove="Markers\MarkersRecibo.json" />
     <None Remove="Seeder\Data\ArrendadorData.json" />
     <None Remove="Seeder\Data\ArrendatarioData.json" />
+    <None Remove="Seeder\Data\InteriorData.json" />
     <None Remove="Seeder\Data\ContratoData.json" />
     <None Remove="Seeder\Data\FiadorData.json" />
     <None Remove="Seeder\Data\PropiedadData.json" />
@@ -50,6 +51,9 @@
     <EmbeddedResource Include="Seeder\Data\ContratoData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Seeder\Data\InteriorData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seeder\Data\FiadorData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -70,6 +74,7 @@
     <PackageReference Include="DinkToPdf.Standard" Version="1.1.0" />
     <PackageReference Include="DinkToPdfCopy" Version="1.0.0" />
     <PackageReference Include="Humanizer" Version="2.14.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -4,6 +4,7 @@ using Core.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.Migrations
 {
     [DbContext(typeof(ArrendamientoContext))]
-    partial class ArrendamientoContextModelSnapshot : ModelSnapshot
+    [Migration("20260217050302_AddingPropToConectArrWithInt")]
+    partial class AddingPropToConectArrWithInt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -171,6 +174,9 @@ namespace Core.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
+
+                    b.Property<int?>("PropiedadId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Rfc")
                         .HasMaxLength(100)
@@ -340,11 +346,23 @@ namespace Core.Migrations
                     b.Property<int?>("DeletedBy")
                         .HasColumnType("int");
 
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Etiqueta")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<bool>("Libre")
                         .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(65,30)");
@@ -381,6 +399,9 @@ namespace Core.Migrations
                     b.Property<string>("Alias")
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
+
+                    b.Property<int?>("ArrendatarioId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Colonia")
                         .IsRequired()
@@ -437,6 +458,8 @@ namespace Core.Migrations
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
+
+                    b.HasIndex("ArrendatarioId");
 
                     b.ToTable("propiedad");
                 });
@@ -524,9 +547,6 @@ namespace Core.Migrations
                     b.Property<int>("ReImpresionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TipoRecibo")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Total")
                         .HasPrecision(10)
                         .HasColumnType("decimal(10,0)");
@@ -595,6 +615,15 @@ namespace Core.Migrations
                     b.Navigation("Propiedad");
                 });
 
+            modelBuilder.Entity("Core.Models.Entities.Propiedad", b =>
+                {
+                    b.HasOne("Core.Models.Entities.Arrendatario", "Arrendatario")
+                        .WithMany("Propiedad")
+                        .HasForeignKey("ArrendatarioId");
+
+                    b.Navigation("Arrendatario");
+                });
+
             modelBuilder.Entity("Core.Models.Entities.ReImpresion", b =>
                 {
                     b.HasOne("Core.Models.Entities.Recibo", null)
@@ -607,6 +636,8 @@ namespace Core.Migrations
             modelBuilder.Entity("Core.Models.Entities.Arrendatario", b =>
                 {
                     b.Navigation("Interiores");
+
+                    b.Navigation("Propiedad");
                 });
 
             modelBuilder.Entity("Core.Models.Entities.Propiedad", b =>

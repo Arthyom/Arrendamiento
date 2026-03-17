@@ -10,5 +10,6 @@ namespace Core.Services.Common.Interfaces
 {
     public interface IReciboService : IServiceDocBase<Recibo>
     {
+        public Task<Recibo> CreateSingle(Recibo toCreate);
     }
 }
