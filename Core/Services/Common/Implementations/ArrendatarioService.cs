@@ -28,5 +28,18 @@ namespace Core.Services.Common.Implementations
                             .ToListAsync();
         }
 
+
+        public async new Task<Arrendatario?> GetByIdAsync(int id)
+        {
+            return await _repoGenerico.createInstance<Arrendatario>()
+                            ._entity
+                            .AsQueryable()
+                            .Where( x => x.Id == id )
+                            .Include( A => A.Interiores)
+                            .ThenInclude( i => i.Propiedad )
+                            .AsNoTracking(  )
+                            .FirstOrDefaultAsync();
+        }
+
     }
 }

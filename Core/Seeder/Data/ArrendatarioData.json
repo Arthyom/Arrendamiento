@@ -12,24 +12,28 @@
     "type": "table",
     "name": "arrendatario",
     "database": "arrendamiento",
-    "data": [
+
+    "arrendatario": [
       {
         "Id": 1,
         "Nombre": "RODOLFO",
         "ApellidoPaterno": "SIERRA",
-        "ApellidoMaterno": "",
+        "ApellidoMaterno": "SIERRA",
         "Curp": "string",
         "Rfc": "string",
         "Alias": "Sofia",
-        "Direccion": "string",
-        "Municipio": "string",
-        "Colonia": "string",
-        "CreatedAt": "2024-08-25T07:30:31.000Z",
-        "UpdatedAt": "2024-08-25T07:47:29.000Z",
-        "DeletedAt": "2024-08-25T13:30:03.000Z",
-        "CreatedBy": 1,
+        "Direccion": "DESCONOCIDA",
+        "Municipio": "MOROLEON",
+        "Colonia": "VILLAS DEL SUR",
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:32:54.000Z",
+        "DeletedAt": null,
+        "CreatedBy": 0,
         "UpdatedBy": 2,
-        "DeletedBy": 0
+        "DeletedBy": null,
+        "Cp": "38800",
+        "Email": null,
+        "Telefono": "4451586161"
       },
       {
         "Id": 2,
@@ -40,14 +44,17 @@
         "Rfc": null,
         "Alias": "Nene",
         "Direccion": "ELODIA LEDEZMA #68",
-        "Municipio": "SAMEASPROPERTY",
+        "Municipio": "MOROLEO",
         "Colonia": "INSURGENTES",
-        "CreatedAt": "2024-08-29T10:39:00.000Z",
-        "UpdatedAt": null,
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:34:48.000Z",
         "DeletedAt": null,
-        "CreatedBy": 1,
-        "UpdatedBy": null,
-        "DeletedBy": null
+        "CreatedBy": 0,
+        "UpdatedBy": 2,
+        "DeletedBy": null,
+        "Cp": "38880",
+        "Email": null,
+        "Telefono": "4451136666"
       },
       {
         "Id": 3,
@@ -60,12 +67,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T10:47:53.000Z",
+        "CreatedAt": "2024-08-29T16:47:53.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 4,
@@ -78,12 +88,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T10:50:19.000Z",
+        "CreatedAt": "2024-08-29T16:50:19.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 5,
@@ -96,12 +109,15 @@
         "Direccion": "PLATA 62",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "LA ESPERANZA",
-        "CreatedAt": "2024-08-29T10:52:36.000Z",
+        "CreatedAt": "2024-08-29T16:52:36.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 6,
@@ -114,12 +130,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T10:56:59.000Z",
-        "UpdatedAt": "2026-01-17T08:37:34.000Z",
+        "CreatedAt": "2024-08-29T16:56:59.000Z",
+        "UpdatedAt": "2026-01-17T14:37:34.000Z",
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": 2,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 7,
@@ -131,13 +150,16 @@
         "Alias": "Karen",
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
-        "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T10:56:59.000Z",
-        "UpdatedAt": null,
+        "Colonia": "PROGRESO",
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:36:12.000Z",
         "DeletedAt": null,
-        "CreatedBy": 1,
-        "UpdatedBy": null,
-        "DeletedBy": null
+        "CreatedBy": 0,
+        "UpdatedBy": 2,
+        "DeletedBy": null,
+        "Cp": "11111",
+        "Email": null,
+        "Telefono": "4451127565"
       },
       {
         "Id": 8,
@@ -150,12 +172,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T10:58:33.000Z",
+        "CreatedAt": "2024-08-29T16:58:33.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 9,
@@ -166,14 +191,17 @@
         "Rfc": null,
         "Alias": "Lalo",
         "Direccion": "DESCONOCIDA",
-        "Municipio": "SAMEASPROPERTY",
+        "Municipio": "MOROLEON",
         "Colonia": "DESCONOCIDA",
-        "CreatedAt": "2024-08-29T10:58:34.000Z",
-        "UpdatedAt": null,
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:37:31.000Z",
         "DeletedAt": null,
-        "CreatedBy": 1,
-        "UpdatedBy": null,
-        "DeletedBy": null
+        "CreatedBy": 0,
+        "UpdatedBy": 2,
+        "DeletedBy": null,
+        "Cp": "11111",
+        "Email": null,
+        "Telefono": "4451134875"
       },
       {
         "Id": 10,
@@ -186,12 +214,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T11:01:35.000Z",
-        "UpdatedAt": "2025-12-17T04:45:29.000Z",
+        "CreatedAt": "2024-08-29T17:01:35.000Z",
+        "UpdatedAt": "2025-12-17T10:45:29.000Z",
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": 2,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 11,
@@ -203,13 +234,16 @@
         "Alias": "Carolina",
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
-        "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T11:01:35.000Z",
-        "UpdatedAt": "2025-12-17T04:46:42.000Z",
+        "Colonia": "VILLAS DEL SUR",
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:39:12.000Z",
         "DeletedAt": null,
-        "CreatedBy": 1,
+        "CreatedBy": 0,
         "UpdatedBy": 2,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": "22222",
+        "Email": null,
+        "Telefono": "4451312292"
       },
       {
         "Id": 12,
@@ -222,12 +256,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T11:05:49.000Z",
-        "UpdatedAt": null,
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:40:14.000Z",
         "DeletedAt": null,
-        "CreatedBy": 1,
-        "UpdatedBy": null,
-        "DeletedBy": null
+        "CreatedBy": 0,
+        "UpdatedBy": 2,
+        "DeletedBy": null,
+        "Cp": "11111",
+        "Email": null,
+        "Telefono": "4451121716"
       },
       {
         "Id": 13,
@@ -240,12 +277,15 @@
         "Direccion": "DESCONOCIDA",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "DESCONOCIDA",
-        "CreatedAt": "2024-08-29T11:11:54.000Z",
+        "CreatedAt": "2024-08-29T17:11:54.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 14,
@@ -258,12 +298,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T11:11:54.000Z",
+        "CreatedAt": "2024-08-29T17:11:54.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 15,
@@ -276,12 +319,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T11:17:01.000Z",
+        "CreatedAt": "2024-08-29T17:17:01.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 16,
@@ -294,12 +340,15 @@
         "Direccion": "SAMEASPROPERTY",
         "Municipio": "SAMEASPROPERTY",
         "Colonia": "SAMEASPROPERTY",
-        "CreatedAt": "2024-08-29T11:54:38.000Z",
+        "CreatedAt": "2024-08-29T17:54:38.000Z",
         "UpdatedAt": null,
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": null,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 17,
@@ -312,12 +361,15 @@
         "Direccion": "C Violeta 48",
         "Municipio": "Moroleon",
         "Colonia": "Centro",
-        "CreatedAt": "2024-11-06T06:01:39.000Z",
-        "UpdatedAt": "2026-01-02T14:03:50.000Z",
-        "DeletedAt": "2024-11-06T12:00:14.000Z",
+        "CreatedAt": "2024-11-06T12:01:39.000Z",
+        "UpdatedAt": "2026-01-02T20:03:50.000Z",
+        "DeletedAt": "2024-11-06T18:00:14.000Z",
         "CreatedBy": 1,
         "UpdatedBy": 2,
-        "DeletedBy": 0
+        "DeletedBy": 0,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 24,
@@ -330,12 +382,15 @@
         "Direccion": "16 DE SEPTIEMBRE #360",
         "Municipio": "MOROLEON",
         "Colonia": "CENTRO",
-        "CreatedAt": "2025-03-10T11:35:29.000Z",
-        "UpdatedAt": "2026-01-02T13:57:19.000Z",
+        "CreatedAt": "2025-03-10T17:35:29.000Z",
+        "UpdatedAt": "2026-01-02T19:57:19.000Z",
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": 2,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 27,
@@ -348,12 +403,15 @@
         "Direccion": "REVOLUCION #129",
         "Municipio": "YURIRIA",
         "Colonia": "SAN JUAN",
-        "CreatedAt": "2025-11-06T10:00:23.000Z",
-        "UpdatedAt": "2026-01-02T14:01:31.000Z",
+        "CreatedAt": "2025-11-06T16:00:23.000Z",
+        "UpdatedAt": "2026-01-02T20:01:31.000Z",
         "DeletedAt": null,
         "CreatedBy": 1,
         "UpdatedBy": 2,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": null,
+        "Email": null,
+        "Telefono": null
       },
       {
         "Id": 28,
@@ -366,12 +424,15 @@
         "Direccion": "AV CONSTITUYENTES #19 B",
         "Municipio": "URIANGATO",
         "Colonia": "LA JOYITA",
-        "CreatedAt": "2025-11-06T10:12:46.000Z",
-        "UpdatedAt": "2026-01-02T14:12:11.000Z",
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:41:19.000Z",
         "DeletedAt": null,
-        "CreatedBy": 1,
+        "CreatedBy": 0,
         "UpdatedBy": 2,
-        "DeletedBy": null
+        "DeletedBy": null,
+        "Cp": "11111",
+        "Email": null,
+        "Telefono": "4451112595"
       },
       {
         "Id": 29,
@@ -384,12 +445,15 @@
         "Direccion": "AV. BENITO JUAREZ #27",
         "Municipio": "MOROLEON",
         "Colonia": "CENTRO",
-        "CreatedAt": "2025-11-25T10:21:01.000Z",
-        "UpdatedAt": "2025-11-25T10:35:23.000Z",
-        "DeletedAt": "2024-08-25T13:30:03.000Z",
-        "CreatedBy": 1,
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:43:43.000Z",
+        "DeletedAt": null,
+        "CreatedBy": 0,
         "UpdatedBy": 2,
-        "DeletedBy": 0
+        "DeletedBy": null,
+        "Cp": "38800",
+        "Email": null,
+        "Telefono": "4454555363"
       },
       {
         "Id": 30,
@@ -402,12 +466,15 @@
         "Direccion": "Fracc. jardines de morelos 55070",
         "Municipio": "Ecatepec de morelos",
         "Colonia": "Fracc. jardines de morelos",
-        "CreatedAt": "2026-01-17T08:35:54.000Z",
-        "UpdatedAt": "2026-01-17T08:40:27.000Z",
-        "DeletedAt": "2026-01-17T08:35:04.000Z",
-        "CreatedBy": 1,
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:42:13.000Z",
+        "DeletedAt": null,
+        "CreatedBy": 0,
         "UpdatedBy": 2,
-        "DeletedBy": 0
+        "DeletedBy": null,
+        "Cp": "11111",
+        "Email": null,
+        "Telefono": "4452162870"
       },
       {
         "Id": 31,
@@ -420,12 +487,15 @@
         "Direccion": "LOS POTREROS #118",
         "Municipio": "Yuriria",
         "Colonia": "YACATITAS",
-        "CreatedAt": "2026-01-17T08:35:54.000Z",
-        "UpdatedAt": "2026-01-17T08:40:27.000Z",
-        "DeletedAt": "2026-01-17T08:35:04.000Z",
-        "CreatedBy": 1,
+        "CreatedAt": "0001-12-30T06:00:00.000Z",
+        "UpdatedAt": "2026-03-28T03:42:56.000Z",
+        "DeletedAt": null,
+        "CreatedBy": 0,
         "UpdatedBy": 2,
-        "DeletedBy": 0
+        "DeletedBy": null,
+        "Cp": "11111",
+        "Email": null,
+        "Telefono": "4451120263"
       }
     ]
   }

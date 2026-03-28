@@ -34,5 +34,17 @@ namespace Core.Services.Common.Implementations
 
            return s;
         }
+
+        public async new Task<Propiedad?> GetByIdAsync(int id)
+        {
+            return await _repoGenerico.createInstance<Propiedad>()
+                            ._entity
+                            .AsQueryable()
+                            .Where( x => x.Id == id )
+                            .Include( A => A.Interiores)
+                            // .ThenInclude( i => i.Propiedad )
+                            // .AsNoTracking(  )
+                            .FirstOrDefaultAsync();
+        }
     }
 }

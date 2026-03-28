@@ -16,19 +16,19 @@ public partial class Propiedad : BaseEntity
     [StringLength(100)]
     public string Alias { get; set; }
 
-    [StringLength(100)]
-    public string? Interior { get; set; } 
+    // [StringLength(100)]
+    // public string? Interior { get; set; } 
 
-    [Required]  
-    [StringLength(100)]
-    public string Nombre { get; set; }
+    // [Required]  
+    // [StringLength(100)]
+    // public string Nombre { get; set; }
 
     [Precision(10, 0)]
     public decimal Precio { get; set; }
 
     public TypePropertyEnum TypeProperty { get; set; }
 
-    public bool Libre { get; set; }
+    // public bool Libre { get; set; }
 
     [Required]
     [StringLength(100)]
@@ -40,6 +40,10 @@ public partial class Propiedad : BaseEntity
     [Required]
     [StringLength(100)]
     public string Colonia { get; set; }
+
+
+    [StringLength(5)]
+    public string? Cp { get; set; }
 
     // public int? ArrendatarioId { get; set; } 
 
