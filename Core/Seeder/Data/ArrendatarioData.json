@@ -13,7 +13,7 @@
     "name": "arrendatario",
     "database": "arrendamiento",
 
-    "arrendatario": [
+    "data": [
       {
         "Id": 1,
         "Nombre": "RODOLFO",

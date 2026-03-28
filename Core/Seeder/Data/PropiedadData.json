@@ -13,7 +13,7 @@
     "name": "propiedad",
     "database": "arrendamiento",
 
-    "propiedad": [
+    "data": [
       {
         "Id": 1,
         "Alias": "Quereato #67",
