@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Markers\MarkersInterior.json" />
     <None Remove="Markers\MarkersArrendador.json" />
     <None Remove="Markers\MarkersArrendatario.json" />
     <None Remove="Markers\MarkersContrato.json" />
@@ -24,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+   <EmbeddedResource Include="Markers\MarkersInterior.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Markers\MarkersArrendador.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -88,6 +92,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+    <PackageReference Include="Roman-Numerals" Version="2.0.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
 

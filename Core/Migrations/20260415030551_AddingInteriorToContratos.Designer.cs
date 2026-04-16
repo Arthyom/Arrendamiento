@@ -4,6 +4,7 @@ using Core.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.Migrations
 {
     [DbContext(typeof(ArrendamientoContext))]
-    partial class ArrendamientoContextModelSnapshot : ModelSnapshot
+    [Migration("20260415030551_AddingInteriorToContratos")]
+    partial class AddingInteriorToContratos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -242,12 +245,6 @@ namespace Core.Migrations
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
-
-                    b.HasIndex("ArrendatarioId");
-
-                    b.HasIndex("FiadorId");
-
-                    b.HasIndex("InteriorId");
 
                     b.ToTable("contrato");
                 });
@@ -581,33 +578,6 @@ namespace Core.Migrations
                         .HasName("PRIMARY");
 
                     b.ToTable("Renovacion");
-                });
-
-            modelBuilder.Entity("Core.Models.Entities.Contrato", b =>
-                {
-                    b.HasOne("Core.Models.Entities.Arrendatario", "Arrendatario")
-                        .WithMany()
-                        .HasForeignKey("ArrendatarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Core.Models.Entities.Fiador", "Fiador")
-                        .WithMany()
-                        .HasForeignKey("FiadorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Core.Models.Entities.Interior", "Interior")
-                        .WithMany()
-                        .HasForeignKey("InteriorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Arrendatario");
-
-                    b.Navigation("Fiador");
-
-                    b.Navigation("Interior");
                 });
 
             modelBuilder.Entity("Core.Models.Entities.Interior", b =>

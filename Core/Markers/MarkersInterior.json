@@ -1,0 +1,11 @@
+{
+  "markers": [
+
+    
+    {
+      "key": "${Interior.Etiqueta}",
+      "name": "InteriorEtiqueta",
+      "property": "Etiqueta"
+    }
+  ]
+}

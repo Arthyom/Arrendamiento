@@ -4,6 +4,7 @@ using Core.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.Migrations
 {
     [DbContext(typeof(ArrendamientoContext))]
-    partial class ArrendamientoContextModelSnapshot : ModelSnapshot
+    [Migration("20260415044702_ImprovContratoProps")]
+    partial class ImprovContratoProps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -243,7 +246,7 @@ namespace Core.Migrations
                     b.HasKey("Id")
                         .HasName("PRIMARY");
 
-                    b.HasIndex("ArrendatarioId");
+                    b.HasIndex("ArrendadorId");
 
                     b.HasIndex("FiadorId");
 
@@ -585,9 +588,9 @@ namespace Core.Migrations
 
             modelBuilder.Entity("Core.Models.Entities.Contrato", b =>
                 {
-                    b.HasOne("Core.Models.Entities.Arrendatario", "Arrendatario")
+                    b.HasOne("Core.Models.Entities.Arrendatario", "Arrendador")
                         .WithMany()
-                        .HasForeignKey("ArrendatarioId")
+                        .HasForeignKey("ArrendadorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -603,7 +606,7 @@ namespace Core.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Arrendatario");
+                    b.Navigation("Arrendador");
 
                     b.Navigation("Fiador");
 

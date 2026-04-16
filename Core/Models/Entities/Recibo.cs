@@ -24,6 +24,9 @@ public partial class Recibo : BaseEntity
 
     public string Concepto { get; set; }
 
+    [NotMapped]
+    public int InteriorId { get; set; }
+
 
     [Column(TypeName = "datetime")]
     public DateTime? FechaPago { get; set; }

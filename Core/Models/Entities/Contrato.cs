@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Models.Entities;
@@ -20,13 +21,27 @@ public partial class Contrato : BaseEntity
     [Required]
     public int PropiedadId { get; set; }
 
+    [Required]
+    public int InteriorId { get; set; }
+
     public int FiadorId { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime Termino { get; set; }
 
+    [StringLength(4000)]
+    public string CondicionesAdicionales  { get; set; } = null;
+
 
     [NotMapped]
     public List<Renovacion> Renovacion { get; set; } = new List<Renovacion>();
 
+    [AllowNull]
+    public Fiador Fiador { get; set; } = new Fiador();
+
+    [AllowNull]
+    public Arrendatario Arrendatario { get; set; } = new Arrendatario();
+
+    [AllowNull]
+    public Interior Interior { get; set; } = new Interior ();
 }

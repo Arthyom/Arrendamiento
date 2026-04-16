@@ -161,7 +161,7 @@ line-height:normal'>
                 </span>
             </b><span lang=ES-MX>
                 Manifiesta <b>${Arrendador.Nombre}</b>, ser
-                propietario de la propiedad ubicada en la calle <b>${Propiedad.Direccion}</b> colonia
+                propietario de la propiedad ubicada en la calle <b>${Propiedad.Direccion} (${Interior.Etiqueta})</b> colonia
                 <b>${Propiedad.Colonia}</b> de la ciudad dé <b>${Propiedad.Municipio}</b>, Gto.
             </span>
         </p>
@@ -375,6 +375,9 @@ margin-left:-.25pt;text-align:justify;text-justify:inter-ideograph;text-indent:
                 arrendamiento.
             </span>
         </p>
+
+        ${Contrato.CondicionesAdicionales}
+  
 
         <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
 margin-left:-.25pt;text-align:justify;text-justify:inter-ideograph;text-indent:

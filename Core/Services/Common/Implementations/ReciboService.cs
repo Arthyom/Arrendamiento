@@ -23,15 +23,19 @@ namespace Core.Services.Common.Implementations
         {
             Propiedad? propiedad = await _repoGenerico.createInstance<Propiedad>()
                 .GetByIdAsync(toCreate.PropiedadId);
+            
+            Interior? interior = await _repoGenerico.createInstance<Interior>()
+                .GetByIdAsync(toCreate.InteriorId);
 
-            if (propiedad != null)
+            if (propiedad != null && interior != null)
             {
-                DateTime fechaPago = toCreate.FechaPago.HasValue ? toCreate.FechaPago.Value : DateTime.Now;
+                  DateTime fechaPago = toCreate.FechaPago.HasValue ? toCreate.FechaPago.Value : DateTime.Now;
                 string concepto = toCreate.Concepto;
                 toCreate.Identificador = Guid.NewGuid().ToString();
-                toCreate.Concepto = $"RECIBO DE PAGO POR CONCEPTO: RENTA {fechaPago.ToDateFormat("MMMM 'de' yyyy").ToUpper()}";
-                toCreate.Total = propiedad.Precio;
-
+                toCreate.Concepto = $"RECIBO DE PAGO POR CONCEPTO DE RENTA {fechaPago.ToDateFormat("MMMM 'de' yyyy").ToUpper()} - [P] - [I]"
+                .Replace("[P]", propiedad.Direccion.ToUpper())
+                .Replace("[I]", interior.Etiqueta?.ToUpper());
+                toCreate.Total = interior.Precio;
                 return await _repoGenerico.CreateAsync(toCreate);
             }
 
@@ -63,6 +67,16 @@ namespace Core.Services.Common.Implementations
                         p.markers[3].value = recibo.Total.ToString("0.00");
 
                         p.markers[4].value = recibo.Concepto;
+                    }
+                }
+                else
+                {
+                    if(p == null)
+                        throw new Exception("Propiedad no encontrada");
+
+                    if(p.markers != null)
+                    {
+                        p.markers[3].value = recibo.Total.ToString("0.00");
                     }
                 }
 
